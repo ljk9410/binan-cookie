@@ -40,7 +40,7 @@ const CriticismCookie = ({ comments }: { comments: string[][] }) => {
 			<div className="animate-bounce mt-4">
 				<p className="text-[20px]">{phase === 2 ? 'Retry' : '⬆️ Click ⬆️'}</p>
 			</div>
-			<div className={`mt-4`}>
+			<div className={`mt-4 text-[28px]`}>
 				{phase === 0 ? (
 					<p>스스로를 깨고 앞으로 나아가세요</p>
 				) : (
