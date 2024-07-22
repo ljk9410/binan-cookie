@@ -16,12 +16,10 @@ const CriticismCookie = ({ comments }: { comments: string[][] }) => {
 			setPhase(1);
 		} else if (phase === 1) {
 			setPhase(2);
+		} else if (phase === 2) {
+			setPhase(0);
+			onSetRandomNum();
 		}
-	};
-
-	const onClickRetry = () => {
-		setPhase(0);
-		onSetRandomNum();
 	};
 
 	useEffect(() => {
@@ -36,19 +34,11 @@ const CriticismCookie = ({ comments }: { comments: string[][] }) => {
 				width={300}
 				height={300}
 				alt={`${phase === 0 ? 'small' : ' very'}_angry_cookie`}
-				className={`bg-transparent`}
+				className={`bg-transparent  animate-spin`}
 				onClick={onClickCookie}
 			/>
-			<div className="animate-bounce mt-2">
-				{phase === 2 ? (
-					<button className="text-[20px]" onClick={onClickRetry}>
-						Retry
-					</button>
-				) : (
-					<p>
-						⬆️ <span className="text-[20px]">Click</span> ⬆️
-					</p>
-				)}
+			<div className="animate-bounce mt-4">
+				<p className="text-[20px]">{phase === 2 ? 'Retry' : '⬆️ Click ⬆️'}</p>
 			</div>
 			<div className={`mt-4`}>
 				{phase === 0 ? (
