@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { fetchCriticalCommentData } from '../lib/utiles';
 
 const CriticismCookie = ({ comments }: { comments: string[][] }) => {
 	const [phase, setPhase] = useState(0);
