@@ -1,10 +1,16 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { fetchCriticalCommentData } from '../lib/utiles';
 
 const CriticismCookie = ({ comments }: { comments: string[][] }) => {
 	const [phase, setPhase] = useState(0);
+	const [randomNum, setRandomNum] = useState(0);
+
+	const onSetRandomNum = () => {
+		setRandomNum(Math.floor(Math.random() * comments.length));
+	};
 
 	const onClickCookie = () => {
 		if (phase === 0) {
@@ -16,7 +22,12 @@ const CriticismCookie = ({ comments }: { comments: string[][] }) => {
 
 	const onClickRetry = () => {
 		setPhase(0);
+		onSetRandomNum();
 	};
+
+	useEffect(() => {
+		onSetRandomNum();
+	}, []);
 
 	return (
 		<div className="flex flex-col items-center">
@@ -41,7 +52,11 @@ const CriticismCookie = ({ comments }: { comments: string[][] }) => {
 				)}
 			</div>
 			<div className={`mt-4`}>
-				{phase === 0 ? <p>스스로를 깨고 앞으로 나아가세요</p> : <p>{'123'}</p>}
+				{phase === 0 ? (
+					<p>스스로를 깨고 앞으로 나아가세요</p>
+				) : (
+					<p>{comments[randomNum][phase - 1]}</p>
+				)}
 			</div>
 		</div>
 	);
