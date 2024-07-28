@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Jua } from 'next/font/google';
 import './globals.css';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 const jua = Jua({ subsets: ['latin'], weight: '400' });
 
@@ -36,6 +37,7 @@ export default function RootLayout({
 	return (
 		<html lang="ko">
 			<body className={jua.className}>{children}</body>
+			<GoogleAnalytics gaId="G-G8KEEK8B9T" />
 		</html>
 	);
 }
