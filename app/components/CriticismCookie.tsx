@@ -58,13 +58,15 @@ const CriticismCookie = ({ comments }: { comments: string[][] }) => {
 	}, []);
 
 	return (
-		<div className="flex flex-col w-full items-center pb-24">
-			<p className={`text-[32px] mb-6 text-[#E7963B]`}>Binan Cookie</p>
-			<div className={'w-[250px] h-[300px] flex flex-col justify-end'}>
+		<div className="flex flex-col w-full items-center">
+			<p className={`text-[28px] mt-8 mb-4 text-[#E7963B]`}>Binan Cookie</p>
+			<div
+				className={'w-[250px] h-[300px] flex flex-col justify-end items-center'}
+			>
 				<Image
 					src={cookieSrc}
-					width={250}
-					height={250}
+					width={240}
+					height={240}
 					alt={imgAlt}
 					className={`bg-transparent ${isLoading && 'animate-wiggle'} ${
 						phase === 1 && 'animate-wiggleUpDown'
@@ -76,7 +78,7 @@ const CriticismCookie = ({ comments }: { comments: string[][] }) => {
 				<p className="text-[18px]">{clickMessage}</p>
 			</div>
 			<div
-				className={`mt-8 text-[24px] w-full h-[100px] py-2 px-4 text-center`}
+				className={`mt-8 text-[22px] w-full h-[100px] py-2 px-4 text-center`}
 			>
 				<TypingAnimation text={cookieMessage} phase={phase} speed={50} />
 			</div>
