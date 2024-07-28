@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import TypingAnimation from './TypingAnimation';
+import { sendGAEvent } from '@next/third-parties/google';
 
 const CriticismCookie = ({ comments }: { comments: string[][] }) => {
 	const [phase, setPhase] = useState(0);
@@ -39,6 +40,7 @@ const CriticismCookie = ({ comments }: { comments: string[][] }) => {
 	};
 
 	const onClickCookie = () => {
+		sendGAEvent({ event: 'cookieClicked', value: phase });
 		if (phase === 0) {
 			setIsLoading(true);
 			setTimeout(() => {
@@ -65,8 +67,8 @@ const CriticismCookie = ({ comments }: { comments: string[][] }) => {
 			>
 				<Image
 					src={cookieSrc}
-					width={240}
-					height={240}
+					width={220}
+					height={220}
 					alt={imgAlt}
 					className={`bg-transparent ${isLoading && 'animate-wiggle'} ${
 						phase === 1 && 'animate-wiggleUpDown'
@@ -75,7 +77,7 @@ const CriticismCookie = ({ comments }: { comments: string[][] }) => {
 				/>
 			</div>
 			<div className="animate-bounce mt-4">
-				<p className="text-[18px]">{clickMessage}</p>
+				<p className="text-[16px]">{clickMessage}</p>
 			</div>
 			<div
 				className={`mt-8 text-[22px] w-full h-[100px] py-2 px-4 text-center`}
