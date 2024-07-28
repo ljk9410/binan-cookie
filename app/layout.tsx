@@ -37,7 +37,9 @@ export default function RootLayout({
 	return (
 		<html lang="ko">
 			<body className={jua.className}>{children}</body>
-			<GoogleAnalytics gaId="G-G8KEEK8B9T" />
+			{process.env.NEXT_PUBLIC_GOOGLE_ANAYTICS && (
+				<GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANAYTICS} />
+			)}
 		</html>
 	);
 }
