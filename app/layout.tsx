@@ -26,7 +26,9 @@ export const metadata: Metadata = {
 		url: 'https://binan-cookie.vercel.app',
 		images: [
 			{
-				url: 'https://binan-cookie.vercel.app/sneer_cookie.png',
+				url: 'https://binan-cookie.vercel.app/op_image.png',
+				width: 1200,
+				height: 630,
 				alt: 'Og Image Alt',
 			},
 		],
