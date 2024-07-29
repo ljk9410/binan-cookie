@@ -18,21 +18,42 @@ export const metadata: Metadata = {
 			'ko-KR': '/ko-KR',
 		},
 	},
-	keywords: ['비난 쿠키', 'binan cookie', '회고', '질타', '비난', '교훈'],
+	keywords: [
+		'비난 쿠키',
+		'binan cookie',
+		'회고',
+		'질타',
+		'비난',
+		'교훈',
+		'자아성찰',
+	],
 	openGraph: {
 		title: 'Binan Cookie',
 		description:
-			'언제나 좋은 말만 들으면서 살 수는 없잖아요? 비판을 통해 자신을 돌아보고 성장하는 계기를 만들어 봅시다.',
+			'언제나 좋은 말만 들으면서 살 수는 없잖아요?? 비판을 통해 자신을 돌아보고 성장하는 계기를 만들어 봅시다.',
 		url: 'https://binan-cookie.vercel.app',
 		images: [
 			{
-				url: 'https://binan-cookie.vercel.app/op_image.png',
-				width: 1200,
-				height: 630,
-				alt: 'Og Image Alt',
+				url: '/og_image.png',
+				width: 800,
+				height: 600,
+				alt: 'sneering cookie image',
 			},
 		],
 		type: 'website',
+	},
+	twitter: {
+		title: 'Binan Cookie',
+		description:
+			'언제나 좋은 말만 들으면서 살 수는 없잖아요?? 비판을 통해 자신을 돌아보고 성장하는 계기를 만들어 봅시다.',
+		images: [
+			{
+				url: '/og_image.png',
+				width: 1200,
+				height: 630,
+				alt: 'sneering cookie image',
+			},
+		],
 	},
 };
 
