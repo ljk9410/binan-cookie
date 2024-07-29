@@ -1,4 +1,3 @@
-import { sendGTMEvent } from '@next/third-parties/google';
 import BinanCookie from './components/BinanCookie';
 import { fetchCriticalCommentData } from './lib/utiles';
 import Footer from './components/Footer';
