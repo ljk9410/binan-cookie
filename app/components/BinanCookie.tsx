@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import TypingAnimation from './TypingAnimation';
 import { sendGAEvent } from '@next/third-parties/google';
 
-const CriticismCookie = ({ comments }: { comments: string[][] }) => {
+const BinanCookie = ({ comments }: { comments: string[][] }) => {
 	const [phase, setPhase] = useState(0);
 	const [randomNum, setRandomNum] = useState(0);
 	const [isLoading, setIsLoading] = useState(false);
@@ -60,15 +60,19 @@ const CriticismCookie = ({ comments }: { comments: string[][] }) => {
 	}, []);
 
 	return (
-		<div className="flex flex-col w-full items-center">
-			<p className={`text-[28px] mt-8 mb-4 text-[#E7963B]`}>Binan Cookie</p>
+		<div className="flex flex-col w-full items-center mb-[60px] sm:mb-[84px]">
+			<h1 className={`text-[28px] sm:text-[36px] mb-4 text-[#E7963B]`}>
+				Binan Cookie
+			</h1>
 			<div
-				className={'w-[250px] h-[300px] flex flex-col justify-end items-center'}
+				className={
+					'w-[220px] h-[300px] sm:w-[270px] sm:h-[360px] flex flex-col justify-end items-center -translate-y-8'
+				}
 			>
 				<Image
 					src={cookieSrc}
-					width={220}
-					height={220}
+					width={800}
+					height={600}
 					alt={imgAlt}
 					className={`bg-transparent ${isLoading && 'animate-wiggle'} ${
 						phase === 1 && 'animate-wiggleUpDown'
@@ -76,11 +80,11 @@ const CriticismCookie = ({ comments }: { comments: string[][] }) => {
 					onClick={onClickCookie}
 				/>
 			</div>
-			<div className="animate-bounce mt-4">
-				<p className="text-[16px]">{clickMessage}</p>
+			<div className="animate-bounce">
+				<p className="text-[16px] sm:text-[18px]">{clickMessage}</p>
 			</div>
 			<div
-				className={`mt-8 text-[22px] w-full h-[100px] py-2 px-4 text-center`}
+				className={`mt-8 text-[22px] sm:text-[26px] w-full h-[100px] py-2 px-4 sm:px-8 text-center`}
 			>
 				<TypingAnimation text={cookieMessage} phase={phase} speed={50} />
 			</div>
@@ -88,4 +92,4 @@ const CriticismCookie = ({ comments }: { comments: string[][] }) => {
 	);
 };
 
-export default CriticismCookie;
+export default BinanCookie;
