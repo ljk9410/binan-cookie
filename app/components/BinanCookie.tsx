@@ -39,7 +39,7 @@ const BinanCookie = ({ messageData }: Props) => {
 			: phase === 1
 			? messageData[randomNum].message1
 			: messageData[randomNum].message2;
-	const nickname = messageData[randomNum].nickname;
+	const nickname = messageData[randomNum]?.nickname;
 
 	const onSetRandomNum = () => {
 		setRandomNum(Math.floor(Math.random() * messageData.length));
