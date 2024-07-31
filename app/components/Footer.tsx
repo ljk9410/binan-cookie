@@ -5,21 +5,16 @@ import { addData } from '../api/firebaseAPI';
 
 export default function Footer() {
 	const handleAddData = async () => {
-		console.log('123');
 		try {
 			const newData = {
-				comment1: '파이어베이스 데이터 추가 테스트 입니다',
-				comment2: '파이어베이스 데이터 추가 테스트 comment 2 입니다',
+				message1: '파이어베이스 데이터 추가 테스트 입니다22222',
+				message2: '파이어베이스 데이터 추가 테스트 comment 233333 입니다',
 				nickname: '쩡경',
-				좋아요: null,
-				싫어요: null,
+				isShowMessage: false,
 			};
-			console.log('dkfkdfjdkfjdkj');
 
 			await addData(newData);
 			sendGAEvent({ event: 'footerBtnClicked', value: 1 });
-			// 리덕스로 데이터 관리해야할 것 같은데?
-			// 프롭스로 넘겨주긴 좀 빡셀 듯?
 		} catch (e) {
 			console.log(e);
 		}

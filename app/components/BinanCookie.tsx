@@ -4,8 +4,13 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import TypingAnimation from './TypingAnimation';
 import { sendGAEvent } from '@next/third-parties/google';
+import { MessageData } from '../lib/types';
 
-const BinanCookie = ({ comments }: { comments: string[][] }) => {
+type Props = {
+	messageData: MessageData[];
+};
+
+const BinanCookie = ({ messageData }: Props) => {
 	const [phase, setPhase] = useState(0);
 	const [randomNum, setRandomNum] = useState(0);
 	const [isLoading, setIsLoading] = useState(false);
@@ -32,11 +37,11 @@ const BinanCookie = ({ comments }: { comments: string[][] }) => {
 		phase === 0
 			? ''
 			: phase === 1
-			? `${comments[randomNum][phase - 1]} ㅋㅋ`
-			: comments[randomNum][phase - 1];
+			? messageData[randomNum].message1
+			: messageData[randomNum].message2;
 
 	const onSetRandomNum = () => {
-		setRandomNum(Math.floor(Math.random() * comments.length));
+		setRandomNum(Math.floor(Math.random() * messageData.length));
 	};
 
 	const onClickCookie = () => {
