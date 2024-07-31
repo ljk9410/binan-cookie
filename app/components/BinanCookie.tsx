@@ -39,6 +39,7 @@ const BinanCookie = ({ messageData }: Props) => {
 			: phase === 1
 			? messageData[randomNum].message1
 			: messageData[randomNum].message2;
+	const nickname = messageData[randomNum].nickname;
 
 	const onSetRandomNum = () => {
 		setRandomNum(Math.floor(Math.random() * messageData.length));
@@ -91,7 +92,12 @@ const BinanCookie = ({ messageData }: Props) => {
 			<div
 				className={`mt-8 text-[22px] sm:text-[26px] w-full h-[100px] py-2 px-4 sm:px-8 text-center`}
 			>
-				<TypingAnimation text={cookieMessage} phase={phase} speed={50} />
+				<TypingAnimation text={cookieMessage} phase={phase} speed={40} />
+				{phase !== 0 && nickname && (
+					<p
+						className={'mt-2 text-[16px] sm:text-[20px] text-gray-700'}
+					>{`by ${nickname}`}</p>
+				)}
 			</div>
 		</div>
 	);
