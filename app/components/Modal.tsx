@@ -23,7 +23,7 @@ const Modal = ({ isVisible, onClose, children }: Props) => {
 			onClick={onClose}
 		>
 			<div
-				className="flex items-center justify-center bg-[rgb(241,195,140)] z-51 py-6 rounded shadow-lg relative w-10/12 sm:w-2/5"
+				className="flex items-center justify-center bg-[rgb(241,195,140)] z-51 py-6 rounded shadow-lg relative w-10/12 sm:w-[640px]"
 				onClick={(e) => e.stopPropagation()}
 			>
 				<button
